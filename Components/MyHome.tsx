@@ -1,17 +1,17 @@
-import { View, TextInput, StyleSheet, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { s } from 'react-native-wind'
-import axios from 'axios'
-import { useNavigation } from '@react-navigation/native'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { ScreenList_data } from '../App'
+import React from 'react';
+import { View, TextInput, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { s } from 'react-native-wind';
+import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { ScreenList_data } from '../App';
 
 
 const HomePage: React.FC = () => {
-  const [myAsteroidId, setmyAsteroidId] = React.useState<string>('')
-  const URL_ID: string = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY`
-  const [Loading, setLoadingData] = React.useState<boolean>(false)
-  const navlink = useNavigation<NativeStackNavigationProp<ScreenList_data,"Home">>()
+  const [myAsteroidId, setmyAsteroidId] = React.useState<string>('');
+  const URL_ID: string = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY`;
+  const [Loading, setLoadingData] = React.useState<boolean>(false);
+  const navlink = useNavigation<NativeStackNavigationProp<ScreenList_data,"Home">>();
 
   const fetch_data = async () => {
     try {

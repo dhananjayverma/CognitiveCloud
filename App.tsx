@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {StatusBar}  from 'expo-status-bar';
 import { View } from 'react-native';
-import Asteroid_Data from './Screens/Asteroid';
-import HomePage from './Screens/Home';
+import Asteroid_Data from './Components/Asteroid';
+import HomePage from './Components/MyHome';
 import { s } from 'react-native-wind';
 
 export type ScreenList_data = {
