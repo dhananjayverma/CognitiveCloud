@@ -7,12 +7,12 @@ import Asteroid_Data from './Screens/Asteroid';
 import HomePage from './Screens/Home';
 import { s } from 'react-native-wind';
 
-export type Screen_List = {
+export type ScreenList_data = {
   Home: undefined;
-  Asteroid: { Asteroid: string | number | null | undefined }
+  Asteroid: { AsteroidData: string | number | null | undefined }
 }
 const App=()=>{
-const Stack = createNativeStackNavigator<Screen_List>()
+const Stack = createNativeStackNavigator<ScreenList_data>()
   return (
     <NavigationContainer>
       <View style={s`h-full`}>

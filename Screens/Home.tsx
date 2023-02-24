@@ -4,14 +4,14 @@ import { s } from 'react-native-wind'
 import axios from 'axios'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { Screen_List } from '../App'
+import { ScreenList_data } from '../App'
 
 
 const HomePage: React.FC = () => {
   const [myAsteroidId, setmyAsteroidId] = React.useState<string>('')
   const URL_ID: string = `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY`
   const [Loading, setLoadingData] = React.useState<boolean>(false)
-  const navlink = useNavigation<NativeStackNavigationProp< Screen_List,"Home">>()
+  const navlink = useNavigation<NativeStackNavigationProp<ScreenList_data,"Home">>()
 
   const fetch_data = async () => {
     try {
@@ -38,7 +38,7 @@ const HomePage: React.FC = () => {
               <TouchableOpacity style={myAsteroidId? styles.Btn : styles.disabled_btn} disabled={!myAsteroidId? true : false}>
                 <Text style={{ color: '#fff', fontSize: 19 }}
                   onPress={() => {
-                    if (myAsteroidId) navlink.navigate('Asteroid', { Asteroid:myAsteroidId })
+                    if (myAsteroidId) navlink.navigate('Asteroid', { AsteroidData:myAsteroidId })
                 }}>Submit</Text>
               </TouchableOpacity>
 

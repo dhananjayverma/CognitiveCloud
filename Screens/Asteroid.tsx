@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-import { Screen_List } from '../App';
+import { ScreenList_data } from '../App';
 import axios from 'axios';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {s} from 'react-native-wind'
@@ -13,10 +13,10 @@ type Asteroid_Details = {
 }
 const Asteroid_Data: React.FC = () => {
     const [myAsteroidDetails, setMyAsteroidDetails] = React.useState<null | Asteroid_Details >(null)
-    const nav = useNavigation<NativeStackNavigationProp< Screen_List,"Asteroid">>()
-    const { params: { Asteroid } } = useRoute<RouteProp< Screen_List, "Asteroid">>()
+    const nav = useNavigation<NativeStackNavigationProp<ScreenList_data,"Asteroid">>()
+    const { params: { AsteroidData } } = useRoute<RouteProp<ScreenList_data, "Asteroid">>()
     const token_data: string = `LcVoGKtf8i9zOPs8IejcjR5IZgZO6XMQhMAeMaDl`
-    const URL_ID: string = `https://api.nasa.gov/neo/rest/v1/neo/${Asteroid}?api_key=${token_data}`
+    const URL_ID: string = `https://api.nasa.gov/neo/rest/v1/neo/${AsteroidData}?api_key=${token_data}`
     const fetch_data= async () => {
         try {
             const { data } = await axios.get(URL_ID)
